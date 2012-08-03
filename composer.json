@@ -11,6 +11,6 @@
         }
     ],
     "autoload": {
-        "psr-0": {"Verdict": "src/"}
+        "psr-0": {"Verdict": "php/src/"}
     }
 }
