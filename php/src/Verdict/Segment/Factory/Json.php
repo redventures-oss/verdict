@@ -57,10 +57,10 @@ class Json implements FactoryInterface
      */
     private function doBuild(array $data, ContextInterface $context)
     {
-        $filter = new FilterFactory($context, $data['Condition']);
+        $filter = new FilterFactory($context, isset($data['Condition']) ? $data['Condition'] : null);
         $tree = new Tree($filter->build());
         $tree->setSegmentName($data['segmentName']);
-        $tree->setSegmentId($data['segmentId']);
+        $tree->setSegmentId(isset($data['segmentId']) ? $data['segmentId'] : null);
         if (is_array($data['children']))
         {
             foreach ($data['children'] as $child)

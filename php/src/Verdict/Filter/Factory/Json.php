@@ -113,7 +113,7 @@ class Json implements FactoryInterface
                         $properties[$key] = is_string($val) ? strtolower($val) : $val;
                     }
                 }
-                return $reflect->newInstance($this->context, $data['contextKey'], $properties);
+                return $reflect->newInstance($this->context, isset($data['contextKey']) ? $data['contextKey'] : null, $properties);
                 break;
             default:
                 throw new RuntimeException('nodeType must be either composite or comparison');
